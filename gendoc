@@ -1,10 +1,10 @@
 #!/bin/sh
-cp ./enterminus.c.in ./enterminus.c
-for I in `find ./src/lib -name "enterminus.h" -print`; do
-  cat $I >> ./enterminus.c
+cp ./terminus.c.in ./terminus.c
+for I in `find ./src/lib -name "terminus.h" -print`; do
+  cat $I >> ./terminus.c
 done
 #for I in `find ./src/lib -name "*.c" -print`; do
-#  cat $I >> ./enterminus.c
+#  cat $I >> ./terminus.c
 #done
 rm -rf ./doc/html ./doc/latex ./doc/man
 doxygen

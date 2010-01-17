@@ -4,9 +4,9 @@ INCLUDES = \
 -I$(top_srcdir)/lib \
 @evas_CFLAGS@ @ecore_CFLAGS@
 
-bin_PROGRAMS = enterminus
+bin_PROGRAMS = terminus
 
-enterminus_SOURCES = \
+terminus_SOURCES = \
 enterm.h \
 term.h \
 main.c \
@@ -18,4 +18,4 @@ handlers.c \
 smart.c \
 enterm.c
 
-enterminus_LDADD = @evas_LIBS@ @ecore_LIBS@
+terminus_LDADD = @evas_LIBS@ @ecore_LIBS@

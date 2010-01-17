@@ -4,7 +4,7 @@ dnl Process this file with autoconf to produce a configure script.
 rm -f config.cache
 
 AC_INIT(configure.ac)
-AM_INIT_AUTOMAKE(enterminus, 0.1)
+AM_INIT_AUTOMAKE(terminus, 0.1)
 AM_CONFIG_HEADER(config.h)
 
 AC_ISC_POSIX
@@ -89,8 +89,8 @@ Makefile
 src/Makefile
 src/bin/Makefile
 data/Makefile
-enterminus-config
+terminus-config
 ],[
-chmod +x enterminus-config
-touch enterminus_docs.tar.gz
+chmod +x terminus-config
+touch terminus_docs.tar.gz
 ])

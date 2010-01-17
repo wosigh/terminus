@@ -5,7 +5,7 @@ exec_prefix=@exec_prefix@
 exec_prefix_set=no
 
 usage="\
-Usage: enterminus-config [--prefix[=DIR]] [--exec-prefix[=DIR]] [--version] [--libs] [--cflags]"
+Usage: terminus-config [--prefix[=DIR]] [--exec-prefix[=DIR]] [--version] [--libs] [--cflags]"
 
 if test $# -eq 0; then
       echo "${usage}" 1>&2
@@ -46,7 +46,7 @@ while test $# -gt 0; do
       ;;
     --libs)
       libdirs=-L@libdir@
-      echo $libdirs -lenterminus @my_libs@
+      echo $libdirs -lterminus @my_libs@
       ;;
     *)
       echo "${usage}" 1>&2

@@ -1,0 +1,24 @@
+/** 
+@file
+@brief terminus
+ 
+These routines are used for terminus.
+*/
+
+/**
+
+@mainpage terminus Documentation
+@image html  terminus.png
+@version 0.0.4
+@author CodeWarrior <hisham@hisham.cc>
+@date 2003-2004
+@author Ryan Hope <rmh3093@gmail.com>
+@date 2010
+
+@section intro What is terminus?
+
+An image slideshow program.
+
+@todo Complete documentation
+
+*/

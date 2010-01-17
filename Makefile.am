@@ -1,6 +1,6 @@
 ## Process this file with automake to produce Makefile.in
 
-MYAPPNAME=enterminus
+MYAPPNAME=terminus
 SUBDIRS = src data
 
 MAINTAINERCLEANFILES = Makefile.in aclocal.m4 config.guess \
