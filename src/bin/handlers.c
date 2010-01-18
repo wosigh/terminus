@@ -588,6 +588,10 @@ term_cb_key_down(void *data, Evas *e, Evas_Object *obj, void *event_info)
 	    size = 1;
 	    if (key_modifiers & ECORE_EVENT_MODIFIER_SHIFT)
 	      st[0] = toupper(st[0]);
+	    else if (key_modifiers & ECORE_EVENT_MODIFIER_CTRL) {
+	      if (st[0] > 0x60 && st[0] < 0x7B)
+	      	  st[0] = st[0]-0x60;
+	    }
 	 } else if((st[0] & 0xe0) == 0xc0)
 	    size = 2;
 	 else if((st[0] & 0xf0) == 0xe0)
