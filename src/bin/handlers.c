@@ -535,6 +535,19 @@ term_cb_key_down(void *data, Evas *e, Evas_Object *obj, void *event_info)
    Term *term = data;
    char *buf = NULL;
 
+   if (evas_key_modifier_is_set(ev->modifiers, "Shift"))
+     key_modifiers |= TERM_KEY_MODIFIER_SHIFT;
+   else if (evas_key_modifier_is_set(ev->modifiers, "Alt"))
+     key_modifiers |= TERM_KEY_MODIFIER_ALT;
+   else if (evas_key_modifier_is_set(ev->modifiers, "Control"))
+     key_modifiers |= TERM_KEY_MODIFIER_CTRL;
+   else if (evas_key_modifier_is_set(ev->modifiers, "Meta"))
+     key_modifiers |= TERM_KEY_MODIFIER_MOD;
+   else if (evas_key_modifier_is_set(ev->modifiers, "Super"))
+     key_modifiers |= TERM_KEY_MODIFIER_WIN;
+   else if (evas_key_modifier_is_set(ev->modifiers, "Hyper"))
+     key_modifiers |= TERM_KEY_MODIFIER_WIN;
+
    /* TODO: improve on this code because its stupid */
    if (!strcmp(ev->keyname, "Left")) {
       buf = malloc(7);
@@ -571,37 +584,25 @@ term_cb_key_down(void *data, Evas *e, Evas_Object *obj, void *event_info)
       {
 	 st = strdup(ev->string);
 	 /* Find the size of data to send borrowed from evas!!*/
-	 if(st[0] < 0x80)
+	 if(st[0] < 0x80) {
 	    size = 1;
-	 else if((st[0] & 0xe0) == 0xc0)
+	    if (key_modifiers & ECORE_EVENT_MODIFIER_SHIFT)
+	      st[0] = toupper(st[0]);
+	 } else if((st[0] & 0xe0) == 0xc0)
 	    size = 2;
 	 else if((st[0] & 0xf0) == 0xe0)
 	    size = 3;	 
 	 else
 	    size = 4;
       }
-      
+
       if (write(term->cmd_fd.sys, st, size) < 0) {
 	    DPRINT((stderr, "Error writing to process: %m\n"));
 	    //exit(2);
 	    }
    }
+
    return;
-
-   /* extra stuff, clean up later */
-
-   if (evas_key_modifier_is_set(ev->modifiers, "Shift"))
-     key_modifiers |= TERM_KEY_MODIFIER_SHIFT;
-   else if (evas_key_modifier_is_set(ev->modifiers, "Alt"))
-     key_modifiers |= TERM_KEY_MODIFIER_ALT;
-   else if (evas_key_modifier_is_set(ev->modifiers, "Control"))
-     key_modifiers |= TERM_KEY_MODIFIER_CTRL;
-   else if (evas_key_modifier_is_set(ev->modifiers, "Meta"))
-     key_modifiers |= TERM_KEY_MODIFIER_MOD;
-   else if (evas_key_modifier_is_set(ev->modifiers, "Super"))
-     key_modifiers |= TERM_KEY_MODIFIER_WIN;
-   else if (evas_key_modifier_is_set(ev->modifiers, "Hyper"))
-     key_modifiers |= TERM_KEY_MODIFIER_WIN;
 
    /* fixup the space char */
    if (!strncmp(keyname, "space", 5))
@@ -617,10 +618,7 @@ term_cb_key_down(void *data, Evas *e, Evas_Object *obj, void *event_info)
 	write(term->cmd_fd.sys, "\n", 1);
 	return;
      }
-   /* fixup upper case chars */
 #if 0
-   else if (key_modifiers & TERM_KEY_MODIFIER_SHIFT)
-     strupper(keyname);
    if (!strcmp(ev->keyname, "Left"))
      term_entry_cursor_left_move(evas_object_smart_data_get(data));
    else if (!strcmp(ev->keyname, "Right"))
