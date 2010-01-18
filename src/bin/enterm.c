@@ -12,11 +12,12 @@ enterm_init(Ecore_Evas *ee, Evas_Object *term)
    t = evas_object_smart_data_get(term);
    ecore_evas_data_set(ee, "term", term);
    ecore_evas_callback_resize_set(ee, enterm_cb_resize);
-   ecore_x_icccm_size_pos_hints_set(ecore_evas_software_x11_window_get(ee), 0,
+   // XXX: PuffTheMagic
+   /*ecore_x_icccm_size_pos_hints_set(ecore_evas_software_x11_window_get(ee), 0,
 				    ECORE_X_GRAVITY_NW, 0, 0, 0, 0, 0, 0,
 				    t->font.width, t->font.height, 0.0, 0.0);
    ecore_event_handler_add(TERM_EVENT_TITLE_CHANGE,
-			   enterm_cb_title_change, ee);
+			   enterm_cb_title_change, ee);*/
    ecore_evas_resize(ee, t->w, t->h);
 }
 
@@ -31,7 +32,8 @@ enterm_cb_resize(Ecore_Evas *ee)
    term_smart_resize(term, w, h);
 }
 
-int
+// XXX: PuffTheMagic
+/*int
 enterm_cb_title_change(void *data, int type, void *ev)
 {
    Term_Event_Title_Change *e;
@@ -42,4 +44,4 @@ enterm_cb_title_change(void *data, int type, void *ev)
    ecore_x_icccm_title_set(ecore_evas_software_x11_window_get(ee),
 			   e->title);
    return 1;
-}
+}*/
