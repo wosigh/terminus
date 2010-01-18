@@ -11,3 +11,17 @@ ltmain.sh
 missing
 src/Makefile.in
 src/bin/Makefile.in
+Makefile
+config.h
+config.log
+config.status
+data/Makefile
+libtool
+src/Makefile
+src/bin/.deps/
+src/bin/Makefile
+src/bin/terminus
+stamp-h1
+terminus-config
+terminus_docs.tar.gz
+*.o
