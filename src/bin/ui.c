@@ -60,9 +60,8 @@ term_update_glyph(Term *term, Term_TGlyph *tgl, Term_EGlyph *gl, int i, int j)
    evas_object_text_text_set(gl->text, cc);
 
    /*TODO break this out to the api */
-   // XXX: PuffTheMagic:
-   /*evas_object_text_style_set(gl->text, EVAS_TEXT_STYLE_SOFT_SHADOW);
-   evas_object_text_shadow_color_set (gl->text, 100, 100, 100, 150);*/
+   evas_object_text_style_set(gl->text, EVAS_TEXT_STYLE_SOFT_SHADOW);
+   evas_object_text_shadow_color_set (gl->text, 100, 100, 100, 150);
    
    /* this is just temp, move it into its own function later */
    switch (tgl->fg) {

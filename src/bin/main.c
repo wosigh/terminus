@@ -17,7 +17,7 @@ main(int argc, char **argv)
    ecore_init();
    ecore_evas_init();/* We NEED this to get the UTF-8 stuff!!*/
    
-   ee = ecore_evas_sdl_new(NULL, 320, 480, 1, 0, 1, 0);
+   ee = ecore_evas_sdl_new(NULL, 320, 480, 1, 0, 1, 1);
    ecore_evas_show(ee);
    evas = ecore_evas_get(ee);
 
