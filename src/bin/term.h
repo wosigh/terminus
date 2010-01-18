@@ -19,13 +19,13 @@
 #include <Evas.h>
 #include <Ecore_Evas.h>
 #include <Ecore_Job.h>
+#include <Ecore_X.h>
 #include "config.h"
 
 #define DEBUG1 0
 
 #define NPAR 16
-// XXX: PuffTheMagic
-#define DATADIR "data/"
+#define DATADIR PACKAGE_DATA_DIR"/"
 
 #ifdef DEBUG
 #define DPRINT(stuff) fprintf stuff
