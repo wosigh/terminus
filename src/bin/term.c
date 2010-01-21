@@ -354,5 +354,11 @@ Term
    term->h = term->font.height * term->rows;
    term_term_bg_set(term, DATADIR"black.png");
 
+   struct winsize win;
+   ioctl(term->cmd_fd.sys, TIOCGWINSZ, &win);
+   win.ws_row = term->rows;
+   win.ws_col = term->cols;
+   ioctl(term->cmd_fd.sys, TIOCSWINSZ, &win);
+
    return term;
 }
