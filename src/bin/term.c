@@ -305,8 +305,8 @@ Term
    evas = evas_object_evas_get(o);
    term->term_id = 0;
    term->evas = evas;
-   term->rows = 24;
-   term->cols = 80;
+   term->rows = 48;
+   term->cols = 63;
    term->cur_row = 0;
    term->cur_col = 0;
    term->tcanvas = term_tcanvas_new(term);
@@ -330,7 +330,7 @@ Term
    term->bg = NULL;
    strcpy(term->font.path, DATADIR);
    strcpy(term->font.face, "VeraMono");
-   term->font.size = 10;
+   term->font.size = 9;
    term->data_ptr = 0;
    term->font.width = term_font_get_width(term);
    term->font.height = term_font_get_height(term);
