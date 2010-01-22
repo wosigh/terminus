@@ -1,2 +1,3 @@
 export LD_LIBRARY_PATH=/media/cryptofs/apps/usr/palm/applications/us.ryanhope.terminus/deps
+export TERMINUS_DATADIR=/media/cryptofs/apps/usr/palm/applications/us.ryanhope.terminus/data
 exec  /media/cryptofs/apps/usr/palm/applications/us.ryanhope.terminus/bin/terminus &
