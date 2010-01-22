@@ -577,6 +577,10 @@ term_cb_key_down(void *data, Evas *e, Evas_Object *obj, void *event_info)
 	   buf = malloc(7);
 	   snprintf(buf, sizeof(buf), "%c", 27);
    }
+   else if (!strcmp(ev->keyname, "w69")) {
+	   buf = malloc(7);
+	   snprintf(buf, sizeof(buf), "%c", 9);
+   }
 
    if (buf) {
       write(term->cmd_fd.sys, buf, strlen(buf));
