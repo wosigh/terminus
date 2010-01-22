@@ -1,2 +1,2 @@
-chdir /media/cryptofs/apps/usr/palm/applications/org.webosinternals.sdldoom/bin
-exec  /media/cryptofs/apps/usr/palm/applications/org.webosinternals.sdldoom/bin/doom &
+chdir /media/cryptofs/apps/usr/palm/applications/us.ryanhope.terminus/bin
+exec  /media/cryptofs/apps/usr/palm/applications/us.ryanhope.terminus/bin/terminus &
