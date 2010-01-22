@@ -573,6 +573,10 @@ term_cb_key_down(void *data, Evas *e, Evas_Object *obj, void *event_info)
    }
    else if (!strcmp(ev->keyname, "Delete")) {
    }
+   else if (!strcmp(ev->keyname, "Escape")) {
+	   buf = malloc(7);
+	   snprintf(buf, sizeof(buf), "%c", 27);
+   }
 
    if (buf) {
       write(term->cmd_fd.sys, buf, strlen(buf));
