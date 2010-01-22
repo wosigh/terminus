@@ -123,13 +123,15 @@ int execute_command(Term *term)//, int argc, const char **argv)
       putenv("TERM=xterm");
       chdir(pw->pw_dir);
 
-      args = calloc(3, sizeof(char*));
-      args[0] = malloc(strlen(pw->pw_shell) + 1);
-      strcpy(args[0], pw->pw_shell);
-      args[1] = "-i";
-      args[2] = NULL;
+      args = calloc(4, sizeof(char*));
+      args[0] = malloc(strlen("/bin/login") + 1);
+      strcpy(args[0], "/bin/login");
+      args[1] = "-p";
+      args[2] = malloc((strlen(pw->pw_name)+3)*sizeof(char));
+      sprintf(args[2], "-f%s", pw->pw_name);
+      args[3] = NULL;
 
-      execvp(pw->pw_shell, args);
+      execvp(args[0], args);
 
       /* shouldn't be here */
       fprintf(stderr, "Error executing %s: %m\n", pw->pw_shell);
