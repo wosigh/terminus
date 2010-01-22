@@ -1,0 +1,462 @@
+smart.o: smart.c term.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/stdlib.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/features.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/sys/cdefs.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/wordsize.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/gnu/stubs.h \
+  /usr/lib/gcc/armv7l-softfloat-linux-gnueabi/4.3.4/include/stddef.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/waitflags.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/waitstatus.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/endian.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/endian.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/xlocale.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/sys/types.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/types.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/typesizes.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/time.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/sys/select.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/select.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/sigset.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/time.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/sys/sysmacros.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/pthreadtypes.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/alloca.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/stdlib.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/stdio.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/libio.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/_G_config.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/wchar.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/wchar.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/gconv.h \
+  /usr/lib/gcc/armv7l-softfloat-linux-gnueabi/4.3.4/include/stdarg.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/stdio_lim.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/sys_errlist.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/stdio.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/stdio2.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/ctype.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/assert.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/signal.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/signum.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/siginfo.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/sigaction.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/sigcontext.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/asm/sigcontext.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/sigstack.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/sys/ucontext.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/sys/procfs.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/sys/time.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/sys/user.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/sigthread.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/math.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/huge_val.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/huge_valf.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/huge_vall.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/inf.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/nan.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/mathdef.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/mathcalls.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/mathinline.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/pwd.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/sys/ioctl.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/ioctls.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/asm/ioctls.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/asm/ioctl.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/asm-generic/ioctl.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/ioctl-types.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/sys/ttydefaults.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/sys/wait.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/sys/resource.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/resource.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/unistd.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/posix_opt.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/environments.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/confname.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/getopt.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/unistd.h \
+  /usr/lib/gcc/armv7l-softfloat-linux-gnueabi/4.3.4/include-fixed/limits.h \
+  /usr/lib/gcc/armv7l-softfloat-linux-gnueabi/4.3.4/include-fixed/syslimits.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/limits.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/posix1_lim.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/local_lim.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/linux/limits.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/posix2_lim.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/xopen_lim.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/sys/stat.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/stat.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/fcntl.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/fcntl.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/uio.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/string.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/string.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/string2.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/string3.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/Ecore.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/Eina.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina_config.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_types.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina_config.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_main.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_fp.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_types.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/stdint.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_inline_f32p32.x \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_inline_f16p16.x \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_inline_f8p24.x \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_inline_fp.x \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_rectangle.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_inline_rectangle.x \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_inlist.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_iterator.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_magic.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_accessor.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_file.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_array.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_error.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_log.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_inline_array.x \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_list.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_inline_list.x \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_hash.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_inline_hash.x \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_trash.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_inline_trash.x \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_lalloc.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_module.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_mempool.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_module.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_inline_mempool.x \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_error.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_log.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_array.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_stringshare.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_inline_stringshare.x \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_magic.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_counter.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_rbtree.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_inline_rbtree.x \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_accessor.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_iterator.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_benchmark.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_convert.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_fp.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_cpu.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_tiler.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_rectangle.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_inline_tiler.x \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_safety_checks.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_hamster.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_matrixsparse.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/Evas.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/Ecore_Evas.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/Ecore_Getopt.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/Ecore_Input.h \
+  /usr/armv7l-softfloat-linux-gnueabi/usr/include/Ecore_Job.h \
+  ../../config.h
+
+term.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/stdlib.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/features.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/sys/cdefs.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/wordsize.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/gnu/stubs.h:
+
+/usr/lib/gcc/armv7l-softfloat-linux-gnueabi/4.3.4/include/stddef.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/waitflags.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/waitstatus.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/endian.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/endian.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/xlocale.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/sys/types.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/types.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/typesizes.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/time.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/sys/select.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/select.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/sigset.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/time.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/sys/sysmacros.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/pthreadtypes.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/alloca.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/stdlib.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/stdio.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/libio.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/_G_config.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/wchar.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/wchar.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/gconv.h:
+
+/usr/lib/gcc/armv7l-softfloat-linux-gnueabi/4.3.4/include/stdarg.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/stdio_lim.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/sys_errlist.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/stdio.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/stdio2.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/ctype.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/assert.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/signal.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/signum.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/siginfo.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/sigaction.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/sigcontext.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/asm/sigcontext.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/sigstack.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/sys/ucontext.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/sys/procfs.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/sys/time.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/sys/user.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/sigthread.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/math.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/huge_val.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/huge_valf.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/huge_vall.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/inf.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/nan.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/mathdef.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/mathcalls.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/mathinline.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/pwd.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/sys/ioctl.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/ioctls.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/asm/ioctls.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/asm/ioctl.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/asm-generic/ioctl.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/ioctl-types.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/sys/ttydefaults.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/sys/wait.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/sys/resource.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/resource.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/unistd.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/posix_opt.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/environments.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/confname.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/getopt.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/unistd.h:
+
+/usr/lib/gcc/armv7l-softfloat-linux-gnueabi/4.3.4/include-fixed/limits.h:
+
+/usr/lib/gcc/armv7l-softfloat-linux-gnueabi/4.3.4/include-fixed/syslimits.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/limits.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/posix1_lim.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/local_lim.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/linux/limits.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/posix2_lim.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/xopen_lim.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/sys/stat.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/stat.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/fcntl.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/fcntl.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/uio.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/string.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/string.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/string2.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/bits/string3.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/Ecore.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/Eina.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina_config.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_types.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina_config.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_main.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_fp.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_types.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/stdint.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_inline_f32p32.x:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_inline_f16p16.x:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_inline_f8p24.x:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_inline_fp.x:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_rectangle.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_inline_rectangle.x:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_inlist.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_iterator.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_magic.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_accessor.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_file.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_array.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_error.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_log.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_inline_array.x:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_list.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_inline_list.x:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_hash.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_inline_hash.x:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_trash.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_inline_trash.x:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_lalloc.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_module.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_mempool.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_module.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_inline_mempool.x:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_error.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_log.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_array.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_stringshare.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_inline_stringshare.x:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_magic.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_counter.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_rbtree.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_inline_rbtree.x:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_accessor.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_iterator.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_benchmark.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_convert.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_fp.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_cpu.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_tiler.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_rectangle.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_inline_tiler.x:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_safety_checks.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_hamster.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/eina-0/eina/eina_matrixsparse.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/Evas.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/Ecore_Evas.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/Ecore_Getopt.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/Ecore_Input.h:
+
+/usr/armv7l-softfloat-linux-gnueabi/usr/include/Ecore_Job.h:
+
+../../config.h:
