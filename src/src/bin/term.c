@@ -328,7 +328,7 @@ Term
    }
 
    term->bg = NULL;
-   strcpy(term->font.path, datadir);
+   strcpy(term->font.path, DATADIR);
    strcpy(term->font.face, "VeraMono");
    term->font.size = 9;
    term->data_ptr = 0;
@@ -352,10 +352,7 @@ Term
 						   NULL, NULL);
    term->w = term->font.width * term->cols;
    term->h = term->font.height * term->rows;
-   char *bg = 0;
-   asprintf(&bg, "%s/black.png",datadir);
-   term_term_bg_set(term, bg);
-   free(bg);
+   term_term_bg_set(term, DATADIR"/black.png");
 
    struct winsize win;
    ioctl(term->cmd_fd.sys, TIOCGWINSZ, &win);

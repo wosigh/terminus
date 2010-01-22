@@ -31,7 +31,7 @@
 #define DPRINT(stuff)
 #endif
 
-char *datadir;
+#define DATADIR "/media/cryptofs/apps/usr/palm/applications/us.ryanhope.terminus/data"
 
 int TERM_EVENT_TITLE_CHANGE;
 
