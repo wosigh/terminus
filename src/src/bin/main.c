@@ -12,6 +12,10 @@ main(int argc, char **argv)
    Evas        *evas;   /* evas       */
    Evas_Object *term;   /* terminal   */
 
+   datadir = getenv("TERMINUS_DATADIR");
+   if (datadir==NULL)
+	   datadir = "/usr/local/share/terminus";
+
    /* Let's initialize some stuff*/
    /*edje_init();*//* hold off for now */
    ecore_init();

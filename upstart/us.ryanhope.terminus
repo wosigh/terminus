@@ -1,2 +1,2 @@
-chdir /media/cryptofs/apps/usr/palm/applications/us.ryanhope.terminus/bin
+export LD_LIBRARY_PATH=/media/cryptofs/apps/usr/palm/applications/us.ryanhope.terminus/deps
 exec  /media/cryptofs/apps/usr/palm/applications/us.ryanhope.terminus/bin/terminus &

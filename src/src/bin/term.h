@@ -24,13 +24,14 @@
 #define DEBUG1 0
 
 #define NPAR 16
-#define DATADIR PACKAGE_DATA_DIR"/"
 
 #ifdef DEBUG
 #define DPRINT(stuff) fprintf stuff
 #else
 #define DPRINT(stuff)
 #endif
+
+char *datadir;
 
 int TERM_EVENT_TITLE_CHANGE;
 

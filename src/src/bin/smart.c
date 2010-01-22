@@ -302,7 +302,10 @@ term_smart_resize(Evas_Object *o, Evas_Coord w, Evas_Coord h)
    term->w = term->font.width * term->cols;
    term->h = term->font.height * term->rows;
 
-   term_term_bg_set(term, DATADIR"black.png");
+   char *bg = 0;
+   asprintf(&bg, "%s/black.png",datadir);
+   term_term_bg_set(term, bg);
+   free(bg);
 
    struct winsize win;
    ioctl(term->cmd_fd.sys, TIOCGWINSZ, &win);
