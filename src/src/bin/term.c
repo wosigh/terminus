@@ -293,6 +293,18 @@ term_font_get_height(Term *term)
    return h;
 }
 
+void
+term_set_cursor_color(Term *term) {
+	if (term->modifier_shift == 0 && term->modifier_ctrl == 0 && term->modifier_alt == 0)
+		evas_object_color_set(term->cursor.shape, 100, 100, 100, 255);
+	else if (term->modifier_shift > 0 && term->modifier_ctrl == 0 && term->modifier_alt == 0)
+		evas_object_color_set(term->cursor.shape, 0, 0, 255, 255);
+	else if (term->modifier_shift == 0 && term->modifier_ctrl == 0 && term->modifier_alt > 0)
+		evas_object_color_set(term->cursor.shape, 255, 102, 0, 255);
+	else if (term->modifier_shift > 0 && term->modifier_ctrl == 0 && term->modifier_alt > 0)
+		evas_object_color_set(term->cursor.shape, 153, 51, 204, 255);
+}
+
 Term
 *term_init(Evas_Object *o)
 {
@@ -310,6 +322,10 @@ Term
    term->cur_row = 0;
    term->cur_col = 0;
    term->tcanvas = term_tcanvas_new(term);
+   term->lastkey = strdup("");
+   term->modifier_alt = MODIFIER_OFF;
+   term->modifier_ctrl = MODIFIER_OFF;
+   term->modifier_shift = MODIFIER_OFF;
 
    term->grid = calloc(term->rows, sizeof(Term_EGlyph *));
    term->grid[0] = calloc(term->rows * term->cols, sizeof(Term_EGlyph));
@@ -342,7 +358,7 @@ Term
    execute_command(term);//, argc, argv);
    term->cursor.shape = evas_object_rectangle_add(term->evas);
    evas_object_resize(term->cursor.shape, term->font.width, term->font.height);
-   evas_object_color_set(term->cursor.shape, 100, 100, 100, 255);
+   term_set_cursor_color(term);
    evas_object_layer_set(term->cursor.shape, 5);
    evas_object_show(term->cursor.shape);
    term->cursor.last_reset = ecore_time_get();

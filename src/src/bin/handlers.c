@@ -541,12 +541,6 @@ term_cb_key_down(void *data, Evas *e, Evas_Object *obj, void *event_info)
      key_modifiers |= TERM_KEY_MODIFIER_ALT;
    else if (evas_key_modifier_is_set(ev->modifiers, "Control"))
      key_modifiers |= TERM_KEY_MODIFIER_CTRL;
-   else if (evas_key_modifier_is_set(ev->modifiers, "Meta"))
-     key_modifiers |= TERM_KEY_MODIFIER_MOD;
-   else if (evas_key_modifier_is_set(ev->modifiers, "Super"))
-     key_modifiers |= TERM_KEY_MODIFIER_WIN;
-   else if (evas_key_modifier_is_set(ev->modifiers, "Hyper"))
-     key_modifiers |= TERM_KEY_MODIFIER_WIN;
 
    /* TODO: improve on this code because its stupid */
    if (!strcmp(ev->keyname, "Left")) {
@@ -581,6 +575,31 @@ term_cb_key_down(void *data, Evas *e, Evas_Object *obj, void *event_info)
 	   buf = malloc(7);
 	   snprintf(buf, sizeof(buf), "%c", 9);
    }
+   else if (!strcmp(ev->keyname, "Alt_R")) {
+	   switch (term->modifier_alt) {
+	   case MODIFIER_OFF: term->modifier_alt = MODIFIER_ON; break;
+	   case MODIFIER_ON: term->modifier_alt = MODIFIER_LOCKED; break;
+	   case MODIFIER_LOCKED: term->modifier_alt = MODIFIER_OFF; break;
+	   }
+	   goto end;
+   }
+   else if (!strcmp(ev->keyname, "Shift_L")) {
+	   switch (term->modifier_shift) {
+	   case MODIFIER_OFF:term->modifier_shift = MODIFIER_ON; break;
+	   case MODIFIER_ON: term->modifier_shift = MODIFIER_LOCKED; break;
+	   case MODIFIER_LOCKED: term->modifier_shift = MODIFIER_OFF; break;
+	   }
+	   term_set_cursor_color(term);
+	   goto end;
+   }
+   else if (!strcmp(ev->keyname, "Control_R")) {
+	   switch (term->modifier_ctrl) {
+	   case MODIFIER_OFF: term->modifier_ctrl = MODIFIER_ON; break;
+	   case MODIFIER_ON: term->modifier_ctrl = MODIFIER_LOCKED; break;
+	   case MODIFIER_LOCKED: term->modifier_ctrl = MODIFIER_OFF; break;
+	   }
+	   goto end;
+   }
 
    if (buf) {
       write(term->cmd_fd.sys, buf, strlen(buf));
@@ -594,8 +613,13 @@ term_cb_key_down(void *data, Evas *e, Evas_Object *obj, void *event_info)
 	 /* Find the size of data to send borrowed from evas!!*/
 	 if(st[0] < 0x80) {
 	    size = 1;
-	    if (key_modifiers & ECORE_EVENT_MODIFIER_SHIFT)
+	    if (key_modifiers & ECORE_EVENT_MODIFIER_SHIFT || term->modifier_shift > MODIFIER_OFF) {
 	      st[0] = toupper(st[0]);
+	      if (term->modifier_shift == MODIFIER_ON) {
+	    	  term->modifier_shift = MODIFIER_OFF;
+	    	  term_set_cursor_color(term);
+	      }
+	    }
 	    else if (key_modifiers & ECORE_EVENT_MODIFIER_CTRL) {
 	      if (st[0] > 0x60 && st[0] < 0x7B)
 	      	  st[0] = st[0]-0x60;
@@ -613,6 +637,11 @@ term_cb_key_down(void *data, Evas *e, Evas_Object *obj, void *event_info)
 	    //exit(2);
 	    }
    }
+
+   end:
+
+   printf("Shift: %d, Ctrl: %d, Alt: %d\n", term->modifier_shift, term->modifier_ctrl, term->modifier_alt);
+   term->lastkey = strdup(ev->keyname);
 
    return;
 

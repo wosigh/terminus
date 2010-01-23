@@ -116,6 +116,12 @@ struct _Term_Cursor {
 };
 typedef struct _Term_Cursor Term_Cursor;
 
+typedef enum {
+	MODIFIER_OFF,
+	MODIFIER_ON,
+	MODIFIER_LOCKED,
+} modifier_state;
+
 struct _Term {
    int            term_id;
    pid_t          pid;
@@ -142,6 +148,11 @@ struct _Term {
    int            w;
    int            h;
 
+   char			  *lastkey;
+   modifier_state modifier_ctrl;
+   modifier_state modifier_alt;
+   modifier_state modifier_shift;
+
    int            scroll_in_region;
    int            scroll_region_start;
    int            scroll_region_end;
@@ -161,6 +172,7 @@ void            term_tcanvas_bg_color_set(Term *term, int c);
 Term_Char      *term_tcanvas_data_pop(Term *term);
 int             term_font_get_width(Term *term);
 int             term_font_get_height(Term *term);
+void			term_set_cursor_color(Term *term);
 
 void            term_handler_xterm_seq(int op, Term *term);
 int             term_handler_escape_seq(Term *term);
