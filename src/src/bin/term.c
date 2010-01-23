@@ -322,8 +322,8 @@ Term
    evas = evas_object_evas_get(o);
    term->term_id = 0;
    term->evas = evas;
-   term->rows = 48;
-   term->cols = 63;
+   term->rows = 47;
+   term->cols = 62;
    term->cur_row = 0;
    term->cur_col = 0;
    term->tcanvas = term_tcanvas_new(term);
