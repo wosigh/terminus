@@ -295,14 +295,19 @@ term_font_get_height(Term *term)
 
 void
 term_set_cursor_color(Term *term) {
-	if (term->modifier_shift == 0 && term->modifier_ctrl == 0 && term->modifier_alt == 0)
-		evas_object_color_set(term->cursor.shape, 100, 100, 100, 255);
-	else if (term->modifier_shift > 0 && term->modifier_ctrl == 0 && term->modifier_alt == 0)
-		evas_object_color_set(term->cursor.shape, 0, 0, 255, 255);
-	else if (term->modifier_shift == 0 && term->modifier_ctrl == 0 && term->modifier_alt > 0)
-		evas_object_color_set(term->cursor.shape, 255, 102, 0, 255);
-	else if (term->modifier_shift > 0 && term->modifier_ctrl == 0 && term->modifier_alt > 0)
-		evas_object_color_set(term->cursor.shape, 153, 51, 204, 255);
+	if (term->modifier_shift == MODIFIER_OFF)
+		evas_object_color_set(term->cursor_t.shape, 100, 100, 100, 255);
+	else if (term->modifier_shift == MODIFIER_ON)
+		evas_object_color_set(term->cursor_t.shape, 96, 96, 255, 255);
+	else if (term->modifier_shift == MODIFIER_LOCKED)
+			evas_object_color_set(term->cursor_t.shape, 0, 0, 255, 255);
+
+	if (term->modifier_alt == MODIFIER_OFF)
+		evas_object_color_set(term->cursor_b.shape, 100, 100, 100, 255);
+	else if (term->modifier_alt == MODIFIER_ON)
+		evas_object_color_set(term->cursor_b.shape, 255, 198, 96, 255);
+	else if (term->modifier_alt == MODIFIER_LOCKED)
+		evas_object_color_set(term->cursor_b.shape, 255, 102, 0, 255);
 }
 
 Term
@@ -356,12 +361,17 @@ Term
    ecore_timer_add(0.01, term_redraw, term);
    ecore_timer_add(0.095, term_cursor_anim, term);
    execute_command(term);//, argc, argv);
-   term->cursor.shape = evas_object_rectangle_add(term->evas);
-   evas_object_resize(term->cursor.shape, term->font.width, term->font.height);
+   term->cursor_t.shape = evas_object_rectangle_add(term->evas);
+   term->cursor_b.shape = evas_object_rectangle_add(term->evas);
+   evas_object_resize(term->cursor_t.shape, term->font.width, term->font.height/2);
+   evas_object_resize(term->cursor_b.shape, term->font.width, term->font.height);
    term_set_cursor_color(term);
-   evas_object_layer_set(term->cursor.shape, 5);
-   evas_object_show(term->cursor.shape);
-   term->cursor.last_reset = ecore_time_get();
+   evas_object_layer_set(term->cursor_t.shape, 6);
+   evas_object_layer_set(term->cursor_b.shape, 5);
+   evas_object_show(term->cursor_t.shape);
+   evas_object_show(term->cursor_b.shape);
+   term->cursor_t.last_reset = ecore_time_get();
+   term->cursor_b.last_reset = term->cursor_t.last_reset;
    term->cmd_fd.ecore =  ecore_main_fd_handler_add(term->cmd_fd.sys,
 						   ECORE_FD_READ,
 						   term_tcanvas_data, term,

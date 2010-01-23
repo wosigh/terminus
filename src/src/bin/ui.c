@@ -143,9 +143,12 @@ term_redraw(void *data) {
       term->tcanvas->changed_rows[i2] = 0;
    }
    /* display cursor, note: this is still sort of a hack */
-   evas_object_move(term->cursor.shape,
+   evas_object_move(term->cursor_t.shape,
 		    term->cur_col * term->font.width,
 		    term->cur_row * term->font.height);
+   evas_object_move(term->cursor_b.shape,
+   		    term->cur_col * term->font.width,
+   		    term->cur_row * term->font.height);
    return 1;
 }
 
@@ -394,7 +397,7 @@ term_scroll_down(Term *term, int rows)
 
 int term_cursor_anim(Term *term) {
    int a;
-   a = 162 + 73 * cos((ecore_time_get() - term->cursor.last_reset) * 2);
+   a = 162 + 73 * cos((ecore_time_get() - term->cursor_t.last_reset) * 2);
    term_set_cursor_color(term);
    return 1;
 }

@@ -129,7 +129,8 @@ struct _Term {
    Evas          *evas;
    Evas_Object   *bg;
    Term_TCanvas  *tcanvas;
-   Term_Cursor    cursor;
+   Term_Cursor    cursor_t;
+   Term_Cursor    cursor_b;
    Term_Font      font;
    Term_EGlyph  **grid;
    int		  debug;/* Temp */

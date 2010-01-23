@@ -620,9 +620,19 @@ term_cb_key_down(void *data, Evas *e, Evas_Object *obj, void *event_info)
 	    	  term_set_cursor_color(term);
 	      }
 	    }
-	    else if (key_modifiers & ECORE_EVENT_MODIFIER_CTRL) {
+	    if (key_modifiers & ECORE_EVENT_MODIFIER_CTRL || term->modifier_ctrl > MODIFIER_OFF) {
 	      if (st[0] > 0x60 && st[0] < 0x7B)
 	      	  st[0] = st[0]-0x60;
+	      if (term->modifier_ctrl == MODIFIER_ON) {
+	    	  term->modifier_ctrl = MODIFIER_OFF;
+	    	  term_set_cursor_color(term);
+	      }
+	    }
+	    if (key_modifiers & ECORE_EVENT_MODIFIER_ALT || term->modifier_alt > MODIFIER_OFF) {
+	    	if (term->modifier_alt == MODIFIER_ON) {
+	    		term->modifier_alt = MODIFIER_OFF;
+	    		term_set_cursor_color(term);
+	    	}
 	    }
 	 } else if((st[0] & 0xe0) == 0xc0)
 	    size = 2;
@@ -640,7 +650,7 @@ term_cb_key_down(void *data, Evas *e, Evas_Object *obj, void *event_info)
 
    end:
 
-   printf("Shift: %d, Ctrl: %d, Alt: %d\n", term->modifier_shift, term->modifier_ctrl, term->modifier_alt);
+   //printf("Keyname: %s, String: %s, Modifiers: %d, Shift: %d, Ctrl: %d, Alt: %d\n", ev->keyname, ev->string, key_modifiers, term->modifier_shift, term->modifier_ctrl, term->modifier_alt);
    term->lastkey = strdup(ev->keyname);
 
    return;
