@@ -150,7 +150,6 @@ struct _Term {
    int            h;
 
    char			  *lastkey;
-   modifier_state modifier_ctrl;
    modifier_state modifier_alt;
    modifier_state modifier_shift;
 

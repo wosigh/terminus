@@ -329,7 +329,6 @@ Term
    term->tcanvas = term_tcanvas_new(term);
    term->lastkey = strdup("");
    term->modifier_alt = MODIFIER_OFF;
-   term->modifier_ctrl = MODIFIER_OFF;
    term->modifier_shift = MODIFIER_OFF;
 
    term->grid = calloc(term->rows, sizeof(Term_EGlyph *));

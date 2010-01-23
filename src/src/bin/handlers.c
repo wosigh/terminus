@@ -593,11 +593,6 @@ term_cb_key_down(void *data, Evas *e, Evas_Object *obj, void *event_info)
 	   goto end;
    }
    else if (!strcmp(ev->keyname, "Control_R")) {
-	   switch (term->modifier_ctrl) {
-	   case MODIFIER_OFF: term->modifier_ctrl = MODIFIER_ON; break;
-	   case MODIFIER_ON: term->modifier_ctrl = MODIFIER_LOCKED; break;
-	   case MODIFIER_LOCKED: term->modifier_ctrl = MODIFIER_OFF; break;
-	   }
 	   goto end;
    }
 
@@ -620,15 +615,43 @@ term_cb_key_down(void *data, Evas *e, Evas_Object *obj, void *event_info)
 	    	  term_set_cursor_color(term);
 	      }
 	    }
-	    if (key_modifiers & ECORE_EVENT_MODIFIER_CTRL || term->modifier_ctrl > MODIFIER_OFF) {
+	    if (key_modifiers & ECORE_EVENT_MODIFIER_CTRL) {
 	      if (st[0] > 0x60 && st[0] < 0x7B)
 	      	  st[0] = st[0]-0x60;
-	      if (term->modifier_ctrl == MODIFIER_ON) {
-	    	  term->modifier_ctrl = MODIFIER_OFF;
-	    	  term_set_cursor_color(term);
-	      }
 	    }
 	    if (key_modifiers & ECORE_EVENT_MODIFIER_ALT || term->modifier_alt > MODIFIER_OFF) {
+	    	if (!(key_modifiers & ECORE_EVENT_MODIFIER_ALT)) {
+		    	switch (st[0]) {
+		    	case 'q': st[0] = '/'; break;
+		    	case 'w': st[0] = '+'; break;
+		    	case 'e': st[0] = '1'; break;
+		    	case 'r': st[0] = '2'; break;
+		    	case 't': st[0] = '3'; break;
+		    	case 'y': st[0] = '('; break;
+		    	case 'u': st[0] = ')'; break;
+		    	case 'i': st[0] = '%'; break;
+		    	case 'o': st[0] = '"'; break;
+		    	case 'p': st[0] = '='; break;
+		    	case 'a': st[0] = '&'; break;
+		    	case 's': st[0] = '-'; break;
+		    	case 'd': st[0] = '4'; break;
+		    	case 'f': st[0] = '5'; break;
+		    	case 'g': st[0] = '6'; break;
+		    	case 'h': st[0] = '$'; break;
+		    	case 'j': st[0] = '!'; break;
+		    	case 'k': st[0] = ':'; break;
+		    	case 'l': st[0] = '\''; break;
+		    	case 'z': st[0] = '*'; break;
+		    	case 'x': st[0] = '7'; break;
+		    	case 'c': st[0] = '8'; break;
+		    	case 'v': st[0] = '9'; break;
+		    	case 'b': st[0] = '#'; break;
+		    	case 'n': st[0] = '?'; break;
+		    	case 'm': st[0] = ';'; break;
+		    	case ',': st[0] = '_'; break;
+		    	case '@': st[0] = '0'; break;
+		    	}
+	    	}
 	    	if (term->modifier_alt == MODIFIER_ON) {
 	    		term->modifier_alt = MODIFIER_OFF;
 	    		term_set_cursor_color(term);
