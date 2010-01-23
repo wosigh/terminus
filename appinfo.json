@@ -1,7 +1,7 @@
 {
        "title": "Terminus",
        "id": "us.ryanhope.terminus",
-       "version": "0.0.3",
+       "version": "0.0.4",
        "vendor": "Ryan Hope",
        "vendor_email": "rmh3093@gmail.com",
        "vendor_url": "http://git.webos-internals.org/trac/terminus",
