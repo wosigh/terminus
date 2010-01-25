@@ -120,6 +120,8 @@ int execute_command(Term *term)//, int argc, const char **argv)
       /* child */
       get_tty(term);
 
+      chdir(pw->pw_dir);
+
       args = calloc(4, sizeof(char*));
       args[0] = malloc(strlen("/bin/login") + 1);
       strcpy(args[0], "/bin/login");
