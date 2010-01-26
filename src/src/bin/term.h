@@ -33,6 +33,8 @@
 
 #define DATADIR "/media/cryptofs/apps/usr/palm/applications/us.ryanhope.terminus/data"
 
+struct passwd *pw;
+
 int TERM_EVENT_TITLE_CHANGE;
 
 enum Term_Key_Modifiers {

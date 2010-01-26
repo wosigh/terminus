@@ -105,9 +105,6 @@ struct passwd *find_user(void)
 int execute_command(Term *term)//, int argc, const char **argv)
 {
    char **args;
-   struct passwd *pw;
-
-   pw = find_user();
 
    if((term->cmd_fd.sys = get_pty(term)) < 0)
      return -1;
@@ -119,8 +116,6 @@ int execute_command(Term *term)//, int argc, const char **argv)
    if(!pid) {
       /* child */
       get_tty(term);
-
-      chdir(pw->pw_dir);
 
       args = calloc(4, sizeof(char*));
       args[0] = malloc(strlen("/bin/login") + 1);

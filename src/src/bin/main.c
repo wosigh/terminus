@@ -12,6 +12,20 @@ main(int argc, char **argv)
    Evas        *evas;   /* evas       */
    Evas_Object *term;   /* terminal   */
 
+   pw = find_user();
+
+   char *home = 0;
+   int ret = 0;
+   ret = asprintf(&home, "HOME=%s", pw->pw_dir);
+   if (home) {
+	   putenv(home);
+	   ret = chdir(pw->pw_dir);
+	   free(home);
+   } else {
+	   putenv("HOME=/tmp");
+	   ret = chdir("/tmp");
+   }
+
    /* Let's initialize some stuff*/
    /*edje_init();*//* hold off for now */
    ecore_init();
