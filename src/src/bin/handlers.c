@@ -575,6 +575,9 @@ term_cb_key_down(void *data, Evas *e, Evas_Object *obj, void *event_info)
 	   buf = malloc(7);
 	   snprintf(buf, sizeof(buf), "%c", 9);
    }
+   else if (!strcmp(ev->keyname, "w71")) {
+	   goto end;
+   }
    else if (!strcmp(ev->keyname, "Alt_R")) {
 	   switch (term->modifier_alt) {
 	   case MODIFIER_OFF: term->modifier_alt = MODIFIER_ON; break;
